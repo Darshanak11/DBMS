@@ -90,3 +90,7 @@ CREATE TABLE sales(
   INSERT INTO sales VALUES(507, to_date('2023-08-15', 'yyyy-mm-dd'),35,06,105);
 
 select * from sales;
+
+CREATE VIEW EMPDEPT AS SELECT e.EmpId , e.DoB , e.Salary , d.DeptId , d.DeptName , d.DeptLoc FROM Employee e, department d WHERE e.DeptId = d.DeptID;
+SELECT * FROM EMPDEPT WHERE Salary >= 35000 and Salary <= 50000;
+SELECT * FROM EMPDEPT WHERE DeptName = 'HR';
